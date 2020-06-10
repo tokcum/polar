@@ -1,0 +1,10 @@
+[workspace]
+
+members = [
+    "model",
+    "web",
+    "ws",
+    "appl",
+    "db",
+    "util",
+]
