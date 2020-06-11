@@ -2,6 +2,7 @@ use super::id::Id;
 use super::rev::Rev;
 
 use chrono::{DateTime, Utc};
+use rusqlite::types::{FromSql, FromSqlResult, ValueRef, FromSqlError};
 use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize, Debug)]
@@ -23,5 +24,15 @@ impl ObjectType {
             created: Utc::now(),
         }
 
+    }
+}
+
+impl FromSql for ObjectType {
+    fn column_result(value: ValueRef<'_>) -> FromSqlResult<Self> {
+        match value {
+            ValueRef::Text(s) => serde_json::from_slice(s),
+            _ => return Err(FromSqlError::InvalidType),
+        }
+            .map_err(|err| FromSqlError::Other(Box::new(err)))
     }
 }
