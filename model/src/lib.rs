@@ -1,6 +1,6 @@
-pub use self::datatype::DataType;
+pub use self::objecttype::ObjectType;
 
-mod datatype;
+mod objecttype;
 mod id;
 mod rev;
 

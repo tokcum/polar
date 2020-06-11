@@ -1,6 +1,6 @@
-use model::DataType;
+use model::ObjectType;
 
 fn main() {
-    let dt = DataType::new();
+    let dt = ObjectType::new();
     println!("DataType: {:?}", dt);
 }

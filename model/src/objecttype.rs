@@ -3,7 +3,7 @@ use super::rev::Rev;
 use chrono::{DateTime, Utc};
 
 #[derive(Debug)]
-pub struct DataType {
+pub struct ObjectType {
     _id: Id,
     _rev: Rev,
     name: String,
@@ -11,9 +11,9 @@ pub struct DataType {
     created: DateTime<Utc>,
 }
 
-impl DataType {
+impl ObjectType {
     pub fn new() -> Self {
-        DataType {
+        ObjectType {
             _id: Id::new(),
             _rev: Rev::new(),
             name: "".to_string(),
