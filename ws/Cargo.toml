@@ -10,3 +10,10 @@ edition = "2018"
 [dependencies]
 appl = { path = "../appl" }
 model = { path = "../model" }
+
+# External dependencies
+[dependencies.actix-rt]
+version = "1.1.1"
+
+[dependencies.actix-web]
+version = "2.0.0"

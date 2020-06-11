@@ -10,7 +10,7 @@ edition = "2018"
 [dependencies]
 model = { path = "../model" }
 
-# External crates
+# External dependencies
 [dependencies.rusqlite]
 version = "0.23.1"
 
