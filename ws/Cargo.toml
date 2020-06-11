@@ -8,4 +8,5 @@ edition = "2018"
 
 # Local dependencies
 [dependencies]
+appl = { path = "../appl" }
 model = { path = "../model" }

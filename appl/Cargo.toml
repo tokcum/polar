@@ -8,4 +8,5 @@ edition = "2018"
 
 # Local dependencies
 [dependencies]
+db = { path = "../db" }
 model = { path = "../model" }

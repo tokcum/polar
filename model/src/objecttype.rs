@@ -1,8 +1,10 @@
 use super::id::Id;
 use super::rev::Rev;
-use chrono::{DateTime, Utc};
 
-#[derive(Debug)]
+use chrono::{DateTime, Utc};
+use serde::{Deserialize, Serialize};
+
+#[derive(Serialize, Deserialize, Debug)]
 pub struct ObjectType {
     _id: Id,
     _rev: Rev,

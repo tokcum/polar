@@ -1,6 +1,10 @@
 use model::ObjectType;
+use appl::pass;
 
 fn main() {
-    let dt = ObjectType::new();
-    println!("DataType: {:?}", dt);
+    let ot = ObjectType::new();
+
+    pass(&ot);
+
+    println!("ObjectType: {:?}", ot);
 }
