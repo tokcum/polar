@@ -12,9 +12,9 @@ edition = "2018"
 # External dependencies
 [dependencies.chrono]
 version = "0.4.11"
-features = ["serde"]
+features = ["serde", "wasmbind"]
 
-[dependencies.rusqlite]
+[target.'cfg(not(target_arch = "wasm32"))'.dependencies.rusqlite]
 version = "0.23.1"
 
 [dependencies.serde]

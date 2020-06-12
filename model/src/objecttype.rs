@@ -1,9 +1,11 @@
-use super::id::Id;
-use super::rev::Rev;
+use crate::id::Id;
+use crate::rev::Rev;
 
 use chrono::{DateTime, Utc};
-use rusqlite::types::{FromSql, FromSqlResult, ValueRef, FromSqlError};
 use serde::{Deserialize, Serialize};
+
+#[cfg(not(target_arch = "wasm32"))]
+use rusqlite::types::{FromSql, FromSqlResult, ValueRef, FromSqlError};
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct ObjectType {
@@ -27,6 +29,7 @@ impl ObjectType {
     }
 }
 
+#[cfg(not(target_arch = "wasm32"))]
 impl FromSql for ObjectType {
     fn column_result(value: ValueRef<'_>) -> FromSqlResult<Self> {
         match value {

@@ -1,6 +1,7 @@
 use model::ObjectType;
 use appl::{read, write};
 
+use actix_files::{Files};
 use actix_web::{get, post};
 use actix_web::{App, HttpServer, Responder, web};
 
@@ -21,7 +22,8 @@ async fn post(info: web::Path<String>) -> impl Responder {
 async fn main() -> std::io::Result<()> {
     HttpServer::new(|| App::new()
         .service(post)
-        .service(get))
+        .service(get)
+        .service(Files::new("/", "/web").index_file("index.html")))
         .bind("127.0.0.1:8080")?
         .run()
         .await

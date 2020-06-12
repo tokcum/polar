@@ -1,7 +1,7 @@
 pub use self::objecttype::ObjectType;
 
-mod objecttype;
 mod id;
+mod objecttype;
 mod rev;
 
 #[cfg(test)]

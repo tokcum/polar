@@ -6,4 +6,16 @@ edition = "2018"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[lib]
+crate-type = ["cdylib"]
+
+# Local dependencies
 [dependencies]
+model = { path = "../model" }
+
+# External dependencies
+[dependencies.seed]
+version = "0.7.0"
+
+[dependencies.wasm-bindgen]
+version = "0.2.63"
